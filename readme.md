@@ -2,9 +2,9 @@
 
 ## Learning Objectives
 
-- Explain the use of `self` in Ruby
 - Explain the difference between local, instance and class variables
 - Define and differentiate between class and instance methods
+- Explain the use of `self` in Ruby
 - Define inheritance in the context of OOP
 - Write a Ruby class that inherits from another
 
@@ -158,7 +158,7 @@ Let's collaboratively create a `Person` class!
 --------
 
 <details>
-  <summary><strong>Let's give our <code>Person</code> class a <code>say_name</code> method that prints his/her name to the terminal.</strong></summary>
+  <summary><strong>Let's give our <code>Person</code> class a <code>say_name</code> method that `puts` his/her name to the command line.</strong></summary>
 
   ```rb
   class Person
@@ -188,7 +188,7 @@ Let's collaboratively create a `Person` class!
   `say_name` is an instance method. It is a method that we would call on an instance of `Person`.
 
   Ruby classes can define two types of methods...
-  * **Instance:** called on on single instances of a class.
+  * **Instance:** called on a single instance of a class.
   * **Class:** called on the class itself and deal with the set of objects instantiated by the class.
 
   > Instance and Class methods are both common and okay to use. This is unlike class variables, which should be used sparingly.
@@ -232,7 +232,7 @@ Let's collaboratively create a `Person` class!
 
   james = Person.new("James", 28)
   puts Person.get_people
-  # => [adrian, james]
+  # => [andy, james]
   ```
 
 
@@ -352,7 +352,7 @@ Make the following additions to our `Person` class. It is up to you to determine
 
 ## Break (10 minutes, 10:55 - 11:05 / 3:25 - 3:35)
 
-## Inheritance (15 minutes, 11:05 - 11:20 / 3:35 - 3:50)
+## Inheritance (25 minutes, 11:05 - 11:30 / 3:35 - 4:00)
 
 Just like we get traits from our parents, we can use a feature called **inheritance** to create multiple classes (children) that share properties and methods from their parents.
 
@@ -464,7 +464,7 @@ jill.get_class_name
 
 </details>
 
-### You Do: Inheritance (15 minutes, 11:20 - 11:35 / 3:50 - 4:05)
+### You Do: Inheritance (15 minutes, 11:30 - 11:45 / 4:00 - 4:15)
 
 > 10 minutes exercise. 5 minutes review.
 
@@ -477,7 +477,7 @@ jill.get_class_name
 
 <details>
   <summary><strong>Hint</strong></summary>
-  >
+  
   ```rb
   class TwoHeadedPerson < Person
     def initialize(name, age, second_name)
@@ -486,11 +486,12 @@ jill.get_class_name
     end
   end
   ```
+
 </details>
 
 
 
-### You Do: Codebar (25 minutes, 11:35 - 12:00 / 4:05 - 4:30)
+### You Do: Codebar (25 minutes, 11:45 - 12:10 / 4:15 - 4:40)
 
 > 20 minutes exercise. 5 minutes review.
 
@@ -502,7 +503,6 @@ Clone down [this repo](https://github.com/ga-wdi-exercises/codebar) and follow t
 
 Clone down [this repo](https://github.com/ga-wdi-exercises/shopping_list/blob/master/readme.md) and follow the instructions in the readme.
 
-## Break (10 minutes, 12:00 - 12:10 / 4:30 - 4:40)
 
 ## What's Next? (5 minutes, 12:10 - 12:15 / 4:40 - 4:45)
 
