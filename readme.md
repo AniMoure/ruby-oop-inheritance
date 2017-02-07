@@ -2,7 +2,7 @@
 
 ## Learning Objectives
 
-- Explain the use of self in Ruby
+- Explain the use of `self` in Ruby
 - Explain the difference between local, instance and class variables
 - Define and differentiate between class and instance methods
 - Define inheritance in the context of OOP
@@ -10,13 +10,13 @@
 
 ## Framing
 
-[Yesterday afternoon](https://github.com/ga-wdi-lessons/ruby-oop) you started to learn about object-oriented programming in Ruby and how we can use classes to organize our code into objects.
+[In your last lesson](https://github.com/ga-wdi-lessons/ruby-oop), you started to learn about object-oriented programming in Ruby and how we can use classes to organize our code into objects.
 
 This morning we will focus on two things...
   1. Reviewing what you learned this morning by building a class together.
   2. Introduce the concept of **inheritance** and how classes can pass attributes and methods to each other.
 
-## We Do: Let's Build A Class (2:30 - 3:10, 40 minutes)
+## We Do: Let's Build A Class (40 minutes, 9:00 - 9:40 / 2:30 - 3:10)
 
 Let's collaboratively create a `Person` class!
 
@@ -77,14 +77,14 @@ Let's collaboratively create a `Person` class!
   <summary><strong>How can we generate an instance of this <code>Person</code> class?</strong></summary>
 
   ```rb
-  adrian = Person.new("Adrian", 29)
+  andy = Person.new("Andy", 25)
   ```
 </details>
 
 --------
 
 <details>
-  <summary><strong>We currently can't access a person's name in the REPL. How would we go about defining a method that allows us to do that?</strong></summary>
+  <summary><strong>We currently can't access a person's name in the REPL due to the fact that Ruby, by default, does not make instance variables available outside of the scope of the object. How would we go about defining a method that allows us to do that?</strong></summary>
 
   ```rb
   class Person
@@ -101,9 +101,9 @@ Let's collaboratively create a `Person` class!
   ```
 
   ```rb
-  adrian = Person.new("Adrian", 29)
-  adrian.get_name
-  # => "Adrian"
+  andy = Person.new("Andy", 25)
+  andy.get_name
+  # => "Andy"
   ```
 
 </details>
@@ -130,9 +130,9 @@ Let's collaboratively create a `Person` class!
   ```
 
   ```rb
-  adrian = Person.new("Adrian", 29)
-  adrian.get_name = "Chad"
-  adrian.set_name
+  andy = Person.new("Andy", 25)
+  andy.set_name("Chad")
+  andy.get_name
   # => "Chad"
   ```
 
@@ -152,13 +152,13 @@ Let's collaboratively create a `Person` class!
     end
   end
   ```
-
+  Note: there is also a `attr_writer` that would allow instance variables to be modified, but not accessed. You will rarely need to use it.
 </details>
 
 --------
 
 <details>
-  <summary><strong>Let's give our <code>Person</code> class a <code>say_name</code> method that prints his/her name to the console.</strong></summary>
+  <summary><strong>Let's give our <code>Person</code> class a <code>say_name</code> method that prints his/her name to the terminal.</strong></summary>
 
   ```rb
   class Person
@@ -175,9 +175,9 @@ Let's collaboratively create a `Person` class!
     end
   end
 
-  adrian = Person.new("Adrian", 29)
-  adrian.say_name
-  # => "Hi, my name is Adrian."
+  andy = Person.new("Andy", 25)
+  andy.say_name
+  # => "Hi, my name is Andy."
   ```
 
 </details>
@@ -189,7 +189,7 @@ Let's collaboratively create a `Person` class!
 
   Ruby classes can define two types of methods...
   * **Instance:** called on on single instances.
-  * **Class:** called on the class, deal with the set of objects.
+  * **Class:** called on the class, deal with the set of objects instantiated by the class.
 
   > Instance and Class methods are both common and okay to use. This is unlike class variables, which should be used sparingly.
 
@@ -224,18 +224,17 @@ Let's collaboratively create a `Person` class!
     end
   end
 
-  adrian = Person.new("Adrian", 29)
-  puts adrian.get_people
+  andy = Person.new("Andy", 25)
+  puts andy.get_people
   # => error
   puts Person.get_people
-  # => [adrian]
+  # => [andy]
 
-  keith = Person.new("Keith", 100)
+  james = Person.new("James", 28)
   puts Person.get_people
-  # => [adrian, keith]
+  # => [adrian, james]
   ```
 
-  > We could also use `self.name` in place of the instance variable `@name`. This is actually preferable. We'll explain why later...
 
 </details>
 
@@ -281,14 +280,14 @@ end
 ```rb
 # Create instances of Group and Person
 instructors = Group.new
-adrian = Person.new("Adrian", 29)
+andy = Person.new("Andy", 25)
 
-# Keep track of how many instructors there are by adding `adrian` (Person) to `instructors` (Group)
-instructors.add_person(adrian)
+# Keep track of how many instructors there are by adding `andy` (Person) to `instructors` (Group)
+instructors.add_person(andy)
 
 # To check how many instructors there are we can run this...
 instructors.people
-# => [adrian]
+# => [andy]
 ```
 
 We could also add other attributes and methods to the `Group` class. It doesn't have to just be a container for instances of the `Person` class.
@@ -304,7 +303,7 @@ Sometimes we don't want to go through the trouble of creating a higher class lik
 <details>
   <summary><strong>What does `self` mean in Ruby?</strong></summary>
 
-  > It contains the current instance of an object.
+  > If it occurs as part of a class method (like below), it refers to the class. If it occurs **inside** of an instance method, it refers to an instance of that class.
 
 </details>
 
@@ -340,7 +339,7 @@ Sometimes we don't want to go through the trouble of creating a higher class lik
 
 One benefit of Ruby is that it is much easier to determine what context we are working in. Unlike Javascript, we cannot redefine what context we are working with using methods like `.bind` `.call` or `.apply`.
 
-### You Do: Keep Building `Person` (3:10 - 3:25, 15 minutes)
+### You Do: Keep Building `Person` (15 minutes, 3:10 - 3:25 / 9:40 - 9:55 )
 
 > 10 minutes exercise. 5 minutes review.
 
@@ -351,13 +350,13 @@ Make the following additions to our `Person` class. It is up to you to determine
 * A method that counts the number of `Person` instances that have been created.
 * A method that compares two people and determines which one is older.
 
-## Break (3:25 - 3:35, 10 minutes)
+## Break (10 minutes, 3:25 - 3:35 / 9:55 - 10:05)
 
-## Inheritance (3:35 - 3:50, 15 minutes)
+## Inheritance (15 minutes, 3:35 - 3:50 / 10:05 - 10:20)
 
 Just like we get traits from our parents, we can use a feature called **inheritance** to create multiple classes (children) that share properties and methods from their parents.
 
-You won't need to write parent / child classes much in this class, but we will use inheritance to give some of our classes additional functionality, especially with rails in a few weeks.
+You won't need to write parent / child classes much in this class, but we will use inheritance to give some of our classes additional functionality, especially with rails later next week.
 
 We've added a `say_age` method to `Person` below to better illustrate how inheritance works in Ruby.
 
@@ -397,13 +396,13 @@ end
 jill = Person.new("Jill", 10)
 bob = LoudPerson.new("Bob", 20)
 
-# Both `say_age` methods produce the same result since it was not overwritten in the `LoudPerson` class.
+# Both `say_age` methods produce the same result because it was not overwritten in the `LoudPerson` class.
 jill.say_age
 # => "I am 10 years old."
 bob.say_age
 # => "I am 20 years old."
 
-# The `say_name` methods produce different results because we overwrote the original in the `LoudPerson` class.
+# The `say_name` methods produce different results because the original was overwritten in the `LoudPerson` class.
 jill.say_name
 # => "My name is Jill."
 bob.say_name
@@ -475,6 +474,21 @@ jill.get_class_name
   2. Uses the same `say_name` method as `LoudPerson`.
   3. Has their own loud version of the `say_age` method.
 * Create a `TwoHeadedPerson` class that shares the same methods as `Person` but also has a second name attribute (for the other head).
+
+<details>
+  <summary><strong>Hint</strong></summary>
+  >
+  ```rb
+  class TwoHeadedPerson < Person
+    def initialize(name, age, second_name)
+      super(name, age)
+      @second_name = second_name
+    end
+  end
+  ```
+</details>
+
+
 
 ### You Do: Codebar (4:30, 25 minutes)
 
