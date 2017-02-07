@@ -16,7 +16,7 @@ This morning we will focus on two things...
   1. Reviewing what you learned this morning by building a class together.
   2. Introduce the concept of **inheritance** and how classes can pass attributes and methods to each other.
 
-## We Do: Let's Build A Class (40 minutes, 9:00 - 9:40 / 2:30 - 3:10)
+## We Do: Let's Build A Class (40 minutes, 10:00 - 10:40 / 2:30 - 3:10)
 
 Let's collaboratively create a `Person` class!
 
@@ -152,7 +152,7 @@ Let's collaboratively create a `Person` class!
     end
   end
   ```
-  Note: there is also a `attr_writer` that would allow instance variables to be modified, but not accessed. You will rarely need to use it.
+  Note: there is also `attr_writer` that would allow instance variables to be modified, but not accessed. You will rarely need to use it.
 </details>
 
 --------
@@ -188,8 +188,8 @@ Let's collaboratively create a `Person` class!
   `say_name` is an instance method. It is a method that we would call on an instance of `Person`.
 
   Ruby classes can define two types of methods...
-  * **Instance:** called on on single instances.
-  * **Class:** called on the class, deal with the set of objects instantiated by the class.
+  * **Instance:** called on on single instances of a class.
+  * **Class:** called on the class itself and deal with the set of objects instantiated by the class.
 
   > Instance and Class methods are both common and okay to use. This is unlike class variables, which should be used sparingly.
 
@@ -339,7 +339,7 @@ Sometimes we don't want to go through the trouble of creating a higher class lik
 
 One benefit of Ruby is that it is much easier to determine what context we are working in. Unlike Javascript, we cannot redefine what context we are working with using methods like `.bind` `.call` or `.apply`.
 
-### You Do: Keep Building `Person` (15 minutes, 3:10 - 3:25 / 9:40 - 9:55 )
+### You Do: Keep Building `Person` (15 minutes, 10:40 - 10:55 / 3:10 - 3:25)
 
 > 10 minutes exercise. 5 minutes review.
 
@@ -350,9 +350,9 @@ Make the following additions to our `Person` class. It is up to you to determine
 * A method that counts the number of `Person` instances that have been created.
 * A method that compares two people and determines which one is older.
 
-## Break (10 minutes, 3:25 - 3:35 / 9:55 - 10:05)
+## Break (10 minutes, 10:55 - 11:05 / 3:25 - 3:35)
 
-## Inheritance (15 minutes, 3:35 - 3:50 / 10:05 - 10:20)
+## Inheritance (15 minutes, 11:05 - 11:20 / 3:35 - 3:50)
 
 Just like we get traits from our parents, we can use a feature called **inheritance** to create multiple classes (children) that share properties and methods from their parents.
 
@@ -464,7 +464,7 @@ jill.get_class_name
 
 </details>
 
-### You Do: Inheritance (3:50 - 4:05, 15 minutes)
+### You Do: Inheritance (15 minutes, 11:20 - 11:35 / 3:50 - 4:05)
 
 > 10 minutes exercise. 5 minutes review.
 
@@ -490,7 +490,7 @@ jill.get_class_name
 
 
 
-### You Do: Codebar (4:30, 25 minutes)
+### You Do: Codebar (25 minutes, 11:35 - 12:00 / 4:05 - 4:30)
 
 > 20 minutes exercise. 5 minutes review.
 
@@ -502,9 +502,9 @@ Clone down [this repo](https://github.com/ga-wdi-exercises/codebar) and follow t
 
 Clone down [this repo](https://github.com/ga-wdi-exercises/shopping_list/blob/master/readme.md) and follow the instructions in the readme.
 
-## Break (4:30 - 4:40, 10 minutes)
+## Break (10 minutes, 12:00 - 12:10 / 4:30 - 4:40)
 
-## What's Next? (4:40 - 4:45, 5 minutes)
+## What's Next? (5 minutes, 12:10 - 12:15 / 4:40 - 4:45)
 
 When we start using Rails, our class definitions are going to be very simple. In fact, they won't contain any content at all! They will, however, inherit from a gem called ActiveRecord. Through this, our classes -- or as we'll come to know them, "models" -- will have access to a wealth of methods that allow us to interact with a database.
 
@@ -533,7 +533,7 @@ Artist.where(nationality: "Sweden")
 
 > [There are plenty more where these came from...](https://github.com/ga-wdi-lessons/activerecord-intro#instance-vs-class-methods)
 
-## Closing/Questions (4:45 - 5:00, 15 minutes)
+## Closing/Questions (15 minutes, 12:15 - 12:30 / 4:45 - 5:00)
 
 ## Sample Questions
 
