@@ -29,6 +29,7 @@ Let's collaboratively create a `Person` class!
   A class is a blueprint. An instance is an object generated from that blueprint.
   * A class' name is capitalized (e.g., `Person`) and is a template for objects of that class.
   * An instance is one specific object created using a class (e.g. `bob = Person.new("Bob", 10)`).
+
 </details>
 <br/>
 <details>
@@ -36,6 +37,7 @@ Let's collaboratively create a `Person` class!
 
   ```rb
   class Person
+
   end
   ```
 
@@ -210,7 +212,7 @@ Let's collaboratively create a `Person` class!
     def initialize(initial_name, initial_age)
       @name = initial_name
       @age = initial_age
-      # Whenever we create a new person, we push it into the `@@people` array
+      # Whenever we create a new instance, we push it into the `@@people` array (here `self` refers to an instance of the Person class)
       @@people.push(self)
     end
 
@@ -218,7 +220,7 @@ Let's collaboratively create a `Person` class!
       puts "Hi, my name is  #{@name}."
     end
 
-    # Here we're creating a method that retrieves the value of `@@people`
+    # Here we're creating a method that retrieves the value of `@@people` (here `self` refers to the Person class itself)
     def self.get_people
       return @@people
     end
@@ -230,7 +232,7 @@ Let's collaboratively create a `Person` class!
   puts Person.get_people
   # => [andy]
 
-  james = Person.new("James", 28)
+  james = Person.new("James", 31)
   puts Person.get_people
   # => [andy, james]
   ```
@@ -245,7 +247,7 @@ Developers tend to avoid using class variables (e.g. `@@some_variable`). As we'l
 Instead, a more common practice is to create a **helper class** that introduces the same functionality that a class variable would, but without headaches introduced by inheritance. From [wikipedia](https://en.wikipedia.org/wiki/Helper_class):
 > In object-oriented programming, a helper class is used to assist in providing some functionality, which isn't the main goal of the application or class in which it is used
 
-For example, in the case of `Person`, we could have a `Group` class. Each instance of `Group` would have an instance variable `@people` which would contain each instance of `Person`.
+For example, in the case of `Person`, we could have a `Group` class. Each instance of `Group` would have an instance variable `@people` which would contain instances of `Person`.
 
 
 
@@ -281,13 +283,15 @@ end
 # Create instances of Group and Person
 instructors = Group.new
 andy = Person.new("Andy", 25)
+james = Person.new("James", 31)
 
-# Keep track of how many instructors there are by adding `andy` (Person) to `instructors` (Group)
+# Keep track of instructors by adding `andy` (Person) to `instructors` (Group)
 instructors.add_person(andy)
+instructors.add_person(james)
 
-# To check how many instructors there are we can run this...
+# To check out all the current instructors we can run this...
 instructors.people
-# => [andy]
+# => [andy, james]
 ```
 
 We could also add other attributes and methods to the `Group` class. It doesn't have to just be a container for instances of the `Person` class.
@@ -477,7 +481,7 @@ jill.get_class_name
 
 <details>
   <summary><strong>Hint</strong></summary>
-  
+
   ```rb
   class TwoHeadedPerson < Person
     def initialize(name, age, second_name)
