@@ -13,7 +13,7 @@
 [In your last lesson](https://github.com/ga-wdi-lessons/ruby-oop), you started to learn about object-oriented programming in Ruby and how we can use classes to organize our code into objects.
 
 Today we will focus on two things...
-  1. Reviewing what you learned this morning by building a class together.
+  1. Reviewing what you learned last class by building a class together.
   2. Introduce the concept of **inheritance** and how classes can pass attributes and methods to each other.
 
 ## We Do: Let's Build A Class (40 minutes, 10:00 - 10:40 / 2:30 - 3:10)
@@ -350,7 +350,6 @@ One benefit of Ruby is that it is much easier to determine what context we are w
 Make the following additions to our `Person` class. It is up to you to determine whether you should use an instance or class method.
 
 * A method that checks to see if a `Person` is old enough to vote.
-* A method that returns the number of `Person` instances that have been created.
 * A method that counts the number of `Person` instances that have been created.
 * A method that compares two people and determines which one is older.
 
@@ -493,22 +492,7 @@ jill.get_class_name
 
 </details>
 
-
-
-### You Do: Codebar (25 minutes, 11:45 - 12:10 / 4:15 - 4:40)
-
-> 20 minutes exercise. 5 minutes review.
-
-Clone down [this repo](https://github.com/ga-wdi-exercises/codebar) and follow the instructions in the readme.
-
-> If you finish early, get started on the optional Shopping List exercise.
-
-### You Do: Shopping List (Optional)
-
-Clone down [this repo](https://github.com/ga-wdi-exercises/shopping_list/blob/master/readme.md) and follow the instructions in the readme.
-
-
-## What's Next? (5 minutes, 12:10 - 12:15 / 4:40 - 4:45)
+## What's Next? (5 minutes, 11:45 - 11:50 / 4:15 - 4:20)
 
 When we start using Rails, our class definitions are going to be very simple. In fact, they won't contain any content at all! They will, however, inherit from a gem called ActiveRecord. Through this, our classes -- or as we'll come to know them, "models" -- will have access to a wealth of methods that allow us to interact with a database.
 
@@ -537,7 +521,18 @@ Artist.where(nationality: "Sweden")
 
 > [There are plenty more where these came from...](https://github.com/ga-wdi-lessons/activerecord-intro#instance-vs-class-methods)
 
-## Closing/Questions (15 minutes, 12:15 - 12:30 / 4:45 - 5:00)
+### You Do: Codebar (Remainder of Class)
+
+Clone down [this repo](https://github.com/ga-wdi-exercises/codebar) and follow the instructions in the readme.
+
+> If you finish early, get started on the optional Shopping List exercise.
+
+### You Do: Shopping List (Optional)
+
+Clone down [this repo](https://github.com/ga-wdi-exercises/shopping_list/blob/master/readme.md) and follow the instructions in the readme.
+
+
+## Closing/Questions
 
 ## Sample Questions
 
